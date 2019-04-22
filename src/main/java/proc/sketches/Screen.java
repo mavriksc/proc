@@ -2,6 +2,7 @@ package proc.sketches;
 
 import processing.core.PApplet;
 import processing.core.PImage;
+import processing.video.Movie;
 import util.ImageLoad;
 
 import javax.imageio.ImageIO;
@@ -13,8 +14,8 @@ public class Screen extends PApplet {
 
     public void settings() {
         size(W, H);
-        img = ImageLoad.getImage("pf.jpg");
-        img.resize(32,0);
+        img = ImageLoad.getImage("sw.jpg");
+        img.resize(32,12);
         img.loadPixels();
         noLoop();
     }
