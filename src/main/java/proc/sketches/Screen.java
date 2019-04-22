@@ -1,28 +1,36 @@
 package proc.sketches;
 
 import processing.core.PApplet;
+import processing.core.PImage;
+import util.ImageLoad;
+
+import javax.imageio.ImageIO;
 
 public class Screen extends PApplet {
-    private static int H = 960, W = 360, SCALE = 30;
-
+    private static int ROWS = 12, COLS = 32, SCALE = 50;
+    private static int H = ROWS * SCALE, W = COLS * SCALE;
+    private static PImage img;
 
     public void settings() {
-        size(H, W);
-
+        size(W, H);
+        img = ImageLoad.getImage("pf.jpg");
+        img.resize(32,0);
+        img.loadPixels();
+        noLoop();
     }
 
     public void draw() {
         background(0);
-        colorMode(HSB);
-        for (int row = 0;row<12;row++){
-            for (int col = 0; col < 32; col++) {
-                fill(((row+col)*10)%255,150,150);
-                rect(col*SCALE,row*SCALE,(col+1)*SCALE,(row+1)*SCALE);
+        for (int row = 0; row < ROWS; row++) {
+            for (int col = 0; col < COLS; col++) {
+                int clr = img.get(col,row);
+                fill(clr);
+                rect(col * SCALE, row * SCALE, (col + 1) * SCALE, (row + 1) * SCALE);
             }
-
         }
-        ellipse(mouseX, mouseY, 20, 20);
     }
+
+
 
     public static void main(String... args) {
         PApplet.main("proc.sketches.Screen");
