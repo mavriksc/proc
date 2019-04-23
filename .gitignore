@@ -14,3 +14,14 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 /.idea
 /out/production/classes/proc/sketches
+/out/production/classes/util/ImageLoad.class
+/out/production/resources/et.jpg
+/out/production/resources/indy.jpg
+/out/production/resources/jesus.jpg
+/out/production/resources/johnny.jpg
+/out/production/resources/kenu.jpg
+/out/production/resources/pf.jpg
+/out/production/resources/rd.jpg
+/out/production/resources/seagul.jpg
+/out/production/resources/sw.jpg
+/out/production/resources/tlk.jpg
